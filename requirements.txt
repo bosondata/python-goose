@@ -4,3 +4,6 @@ cssselect
 jieba
 beautifulsoup
 nltk
+chardet
+msgpack-python
+Flask
