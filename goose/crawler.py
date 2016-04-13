@@ -28,7 +28,6 @@ from goose.utils import URLHelper, RawHelper
 from goose.extractors.content import StandardContentExtractor
 from goose.extractors.videos import VideoExtractor
 from goose.extractors.title import TitleExtractor
-from goose.extractors.images import ImageExtractor
 from goose.extractors.links import LinksExtractor
 from goose.extractors.tweets import TweetsExtractor
 from goose.extractors.authors import AuthorsExtractor
@@ -98,9 +97,6 @@ class Crawler(object):
 
         # title extractor
         self.title_extractor = self.get_title_extractor()
-
-        # image extrator
-        self.image_extractor = self.get_image_extractor()
 
         # html fetcher
         self.htmlfetcher = HtmlFetcher(self.config)
@@ -242,9 +238,6 @@ class Crawler(object):
 
     def get_title_extractor(self):
         return TitleExtractor(self.config, self.article)
-
-    def get_image_extractor(self):
-        return ImageExtractor(self.config, self.article)
 
     def get_video_extractor(self):
         return VideoExtractor(self.config, self.article)
